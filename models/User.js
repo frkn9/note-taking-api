@@ -38,7 +38,7 @@ UserSchema.methods.createJWT = function () {
         email:this.email},
         process.env.JWT_SECRET_KEY,
         {
-            expiresIn:"2 days"
+            expiresIn:"30 days"
         }
     )
 } 

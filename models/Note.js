@@ -11,7 +11,7 @@ const NoteSchema = new mongoose.Schema({
         type:String,
         required:[true, "Content cannot be empty"],
         maxlength:1000
-    }
+    },
 })
 
 module.exports = mongoose.model('Note', NoteSchema)

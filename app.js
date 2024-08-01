@@ -6,12 +6,13 @@ const app = express()
 const connectDB = require('./db/connection')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandler = require('./middleware/error-handler')
-
+const auth = require('./middleware/auth')
 const notesRouter = require('./routes/notes-router')
 const authRouter = require('./routes/auth-router')
 
 app.use(express.json())
-app.use('/api/v1/notes', notesRouter)
+
+app.use('/api/v1/notes', auth, notesRouter)
 app.use('/api/v1/auth', authRouter)
 
 app.use(errorHandler)
