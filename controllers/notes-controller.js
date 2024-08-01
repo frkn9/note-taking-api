@@ -31,7 +31,7 @@ const deleteNote = async (req,res) => {
     if(!note){
         throw new NotFoundError(`Note with id ${id} not found, can't delete note.`)
     } 
-    res.status(StatusCodes.OK).json( {note})
+    res.status(StatusCodes.OK).send()
 }
 
 const updateNote = async (req,res) => {

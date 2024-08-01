@@ -8,14 +8,14 @@ const notFoundMiddleware = require('./middleware/not-found')
 const errorHandler = require('./middleware/error-handler')
 
 const notesRouter = require('./routes/notes-router')
+const authRouter = require('./routes/auth-router')
 
 app.use(express.json())
 app.use('/api/v1/notes', notesRouter)
+app.use('/api/v1/auth', authRouter)
 
 app.use(errorHandler)
 app.use(notFoundMiddleware)
-
-
 
 const port = process.env.PORT || 3000
 
