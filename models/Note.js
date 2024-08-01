@@ -12,6 +12,11 @@ const NoteSchema = new mongoose.Schema({
         required:[true, "Content cannot be empty"],
         maxlength:1000
     },
-})
+    createdBy: {
+        type:mongoose.Types.ObjectId,
+        ref:'User',
+        required:[true, 'Provide the user that created this note']
+    },
+}, {timestamps:true})
 
 module.exports = mongoose.model('Note', NoteSchema)
